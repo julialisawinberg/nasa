@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nasa_winberg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="container">
+        <!-- header -->
+        <header class="main_header">
+            <div class="header_box">
+                <h1>Nasa mars rovers</h1>
+                <ul>
+                    <li class="tg-list-item">
+                        <input class="tgl tgl-flip" id="cb5" type="checkbox" />
+                        <label class="tgl-btn" data-tg-off="Dark" data-tg-on="Light" for="cb5"></label>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main class="name_box">
+            <form class="name_form" autocomplete="off">
+                <label for="aliasName">Choose your Space Name</label>
+                <h5>Space Name (must be 3 charecters)</h5>
+                <input id="aliasName" type="text" placeholder="Pick your space name">
+                <input id="sendBtn" type="submit" disabled>
+            </form>
+        </main>
+    </section>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+
+</html>
