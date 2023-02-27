@@ -2,6 +2,19 @@
 let aliasInput = document.querySelector('#aliasName');
 let btn_send = document.querySelector('#sendBtn');
 
+//api key: dG4EObWynz0oaUjfg3WgCdnsX2J5cVXm0a2Ln8G2
+let apiRoverRef = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=2&api_key=DEMO_KEY";
+
+fetch(apiRoverRef)
+    .then(response => response.json()) // use .json() to parse your JSON data
+    .then(data => console.log(data)) // do stuff with your parsed data
+    .catch(error => console.log(error)) // handle any errors
+//vad vill vi göra med datan
+console.log(data.photos[22].earth_date);
+
+
+//.catch (error => console.log(`Detta är felet: ${error}`));
+
 //lyssna efter user släpper upp en tangent
 aliasInput.addEventListener('keyup', function () {
     //vadn händer närunser släpper tanget

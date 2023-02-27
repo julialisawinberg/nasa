@@ -12,6 +12,11 @@ body {
   background-color: rgb(219, 194, 216);
 }
 
+img {
+  width: 100%;
+  display: block;
+}
+
 .container {
   margin: auto;
   min-height: 100vh;
@@ -93,6 +98,9 @@ body {
   font-size: 2rem;
   font-weight: 600;
 }
+.container .name_box .name_form .button_container {
+  text-align: right;
+}
 .container .name_box .name_form input {
   font-size: 1.3rem;
   padding: 1rem;
@@ -124,4 +132,14 @@ body {
 }
 .container .name_box .name_form input#sendBtn {
   width: 30%;
+}
+.container .card_container {
+  width: 80%;
+  margin: auto;
+}
+.container .card_container .card {
+  background-color: #e7c6ff;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
 }/*# sourceMappingURL=style.css.map */
