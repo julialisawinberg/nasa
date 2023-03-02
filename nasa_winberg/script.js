@@ -3,17 +3,30 @@ let aliasInput = document.querySelector('#aliasName');
 let btn_send = document.querySelector('#sendBtn');
 
 //api key: dG4EObWynz0oaUjfg3WgCdnsX2J5cVXm0a2Ln8G2
-let apiRoverRef = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=2&api_key=DEMO_KEY";
+let apiRoverRef = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=2&api_key=dG4EObWynz0oaUjfg3WgCdnsX2J5cVXm0a2Ln8G2";
+let containerRoverRef = document.querySelector('.card_container');
 
 fetch(apiRoverRef)
-    .then(response => response.json()) // use .json() to parse your JSON data
-    .then(data => console.log(data)) // do stuff with your parsed data
-    .catch(error => console.log(error)) // handle any errors
-//vad vill vi göra med datan
-console.log(data.photos[22].earth_date);
+    .then(response => (response.json()))
+    .then(data => {
+        //vad vil vi göra med data?
+        console.log(data.photos[4].img_src);
+        let myArrayLength = data.photos.length;
+        console.log(myArrayLength);
+        if (myArrayLength === 0) {
+            console.log('Det finns ingen data');
+        } else {
+            console.log('Det finns data');
+            for (let i = 0; i < 4; i++) {
+                //vad ska hända för varje varv i loop
+                console.log(data.photos[i].img_src);
+                containerRoverRef.innerHTML += `<article class="card"><h4>${data.photos[i].rover.name}</h4><figure><img class="rover" src="${data.photos[i].img_src}" alt=""></figure><h4>${data.photos[i].earth_date}</h4></article>`;
 
+            }
+        }
+    })
 
-//.catch (error => console.log(`Detta är felet: ${error}`));
+    .catch(error => console.log(`Detta är felet: ${error}`));
 
 //lyssna efter user släpper upp en tangent
 aliasInput.addEventListener('keyup', function () {
