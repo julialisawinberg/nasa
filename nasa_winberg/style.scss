@@ -12,7 +12,7 @@ html {
 body {
     font-family: $primaryFont;
     //background-color: $secondaryColorLighter;
-    background-color: rgb(219, 194, 216);
+    background-color: $lightBody;
 }
 
 img {
@@ -21,35 +21,48 @@ img {
     //height: 10rem;
 }
 
-.container {
+//är style för den "Welcome(..)"
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
 
+.container {
     margin: auto;
 
-    min-height: 100vh;
-
+    //gjorde så för att den första delen ska ta upp hela skärmen
     .top_container {
         height: 100vh;
 
+        //blir det osm håller i hela headern, nödvändigt för att färgen ska fylla skärmen när det andra i headern får en max bredd
         .main_header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem;
             background-color: $secondaryColor;
-            position: relative;
-            //max-width: 1000px;
 
             .header_box {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 1rem;
 
+                position: relative;
+                //max-width: 1000px;
+
+                //desktop
+                @media (min-width:1040px) {
+                    max-width: 900px;
+                    margin: auto;
+                }
 
                 ul {
 
                     //toggle
                     .tg-list-item {
+                        //gömmer defalt style som kommer med
                         list-style: none;
 
                         .tgl-flip {
-                            //max-width: 3rem;
+                            //gömmer defalt
                             display: none;
 
                             +.tgl-btn {
@@ -58,7 +71,7 @@ img {
                                 //font-family: sans-serif;
                                 perspective: 100px;
 
-
+                                //placerar och för effekt, lite lite style
                                 &:after,
                                 &:before {
                                     display: inline-block;
@@ -76,36 +89,44 @@ img {
                                     border-radius: 4px;
                                 }
 
+                                //för effekt mest
                                 &:after {
                                     content: attr(data-tg-on);
-                                    background: #02C66F;
+                                    //background: #02C66F;
                                     transform: rotateY(-180deg);
                                     padding: .3rem;
                                 }
 
+                                //lightmode
                                 &:before {
-                                    background: #3c096c;
+
+                                    background: #9d4edd;
                                     content: attr(data-tg-off);
                                     padding: .3rem;
                                 }
 
+                                //för efekten
                                 &:active:before {
                                     transform: rotateY(-20deg);
                                 }
                             }
 
+                            //för efekten
                             &:checked+.tgl-btn {
                                 &:before {
                                     transform: rotateY(180deg);
                                 }
 
+                                //darkmode
                                 &:after {
                                     transform: rotateY(0);
                                     right: 1rem;
-                                    background: #9d4edd;
-                                    color: #fafafa;
+                                    background: #3c096c;
+
+                                    color: $darkFontColor;
                                 }
 
+                                //före efekten
                                 &:active:after {
                                     transform: rotateY(20deg);
                                 }
@@ -116,17 +137,23 @@ img {
             }
         }
 
-        //header stop
-
+        //boxen som håller inputs och knapp
         .name_box {
             padding: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: $secondaryColor;
-            margin: 3rem;
+            margin: 10rem;
             border-radius: 10px;
 
+            //desktop
+            @media (min-width:1040px) {
+                max-width: 900px;
+                margin: 10rem auto;
+            }
+
+            //stylen för form elementet som håller in inputsen
             .name_form {
                 flex: 0 1 350px;
                 display: flex;
@@ -139,25 +166,28 @@ img {
                     font-weight: 600;
                 }
 
+                //för att kunna sätta knappen åt höger
                 .button_container {
                     text-align: right;
                 }
 
+                //inputfältet för namnet
                 input {
                     font-size: 1.3rem;
                     padding: 1rem;
                     margin: 0.5rem 0;
                     border: none;
-                    border: 4px solid #c19ee0;
+                    border: 4px solid $primaryColorDarker;
                     border-radius: 10px;
 
-
+                    //när användaren står i fältet
                     &.focusBorder {
                         //tar bort defalit
                         outline: none;
-                        border: 4px solid $primaryColor;
+                        border: 4px solid $inputEnable;
                     }
 
+                    //själva texten för där man skriver sitt namn
                     &::placeholder {
                         color: grey;
                     }
@@ -165,7 +195,7 @@ img {
                     // Style på knappen
                     &[type="submit"] {
                         border: none;
-                        background-color: $primaryColor;
+                        background-color: $inputEnable;
                         color: white;
                         transition: 0.2s;
 
@@ -177,6 +207,7 @@ img {
                         }
                     }
 
+                    //ville ha knappen lite mindre än inpit fältet
                     &#sendBtn {
                         width: 30%;
 
@@ -187,20 +218,22 @@ img {
         }
     }
 
-    .button_container {
+    //ville ha en container för det nedre delarna av sidan med
+    .bottom_container {
         text-align: center;
 
-        h2 {
-            margin-bottom: 1rem;
-        }
-
+        //för att omsluta cardsen
         .card_container {
             width: 90%;
             margin: auto;
-            display: flex;
+            //display: flex;
 
+            @media (min-width:800px) {
+                display: flex;
+                justify-content: center;
+            }
 
-
+            //cardsen som inte syns först
             .card {
                 background-color: $secondaryColor;
                 //margin-bottom: 1rem;
@@ -208,9 +241,68 @@ img {
                 padding: 1rem;
                 border-radius: 1rem;
 
+                //surflpatta
+                @media (min-width:700px) {
+                    flex: 0 0 50%;
+
+                }
+
+                //desktop
+                @media (min-width:1040px) {
+                    flex: 0 0 20%;
+                }
+
             }
         }
     }
 }
 
-//.dark {}
+//klass för darkmode
+.dark {
+    //sätter sig på body
+    background-color: $darkBody;
+
+    //fontena
+    h1 {
+        color: $darkFontColor;
+    }
+
+    h2 {
+        color: $darkFontColor;
+    }
+
+    h5 {
+        color: $darkFontColor;
+    }
+
+    h4 {
+        color: $darkFontColor;
+    }
+
+    .spacename {
+        color: $darkFontColor;
+    }
+
+    .container {
+        .top_container {
+            .main_header {
+                background-color: $darkPrimary;
+            }
+
+            .name_box {
+                background-color: $darkPrimary;
+            }
+        }
+
+        .bottom_container {
+            .card_container {
+                .card {
+                    background-color: $darkPrimary;
+                }
+            }
+        }
+
+    }
+
+
+}
