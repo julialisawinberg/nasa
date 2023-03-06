@@ -41,6 +41,11 @@ btn_send.addEventListener('click', function (event) {
 
     //lyssnar på namn boxen
     let spacenameContainerRef = document.querySelector('.name_box_ultra');
+    // spacenameContainerRef.forEach(element => {
+        
+    // });(element => {
+    //     element.remove();
+    // });
     //sätter in i html vad som skrivs i h2an
     spacenameContainerRef.innerHTML = `<h2>Welcome ${aliasInput.value}! Lets go to space B)</h2> `;
 
@@ -92,7 +97,7 @@ function getRover(valueIn) {
                     //vad ska hända för varje varv i loop
                     console.log(data.photos[i].img_src);
                     //placerar i html
-                    containerRoverRef.innerHTML += `<article article class="card" ><h4>${data.photos[i].rover.name}</h4><figure><img class="rover" src="${data.photos[i].img_src}" alt=""></figure><h4>${data.photos[i].earth_date}</h4></article > `;
+                    containerRoverRef.innerHTML += `<article article class="card" ><h4>${data.photos[i].rover.name}</h4><figure class="img_container"><img class="rover" src="${data.photos[i].img_src}" alt=""></figure><h4>${data.photos[i].earth_date}</h4></article > `;
 
 
                 }
