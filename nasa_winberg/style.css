@@ -98,13 +98,13 @@ h2 {
   justify-content: center;
   align-items: center;
   background-color: #e7c6ff;
-  margin: 10rem;
+  margin: 10%;
   border-radius: 10px;
 }
 @media (min-width: 1040px) {
   .container .top_container .name_box {
     max-width: 900px;
-    margin: 10rem auto;
+    margin: 5rem auto;
   }
 }
 .container .top_container .name_box .name_form {

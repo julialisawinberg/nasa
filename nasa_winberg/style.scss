@@ -149,13 +149,13 @@ h2 {
             justify-content: center;
             align-items: center;
             background-color: $secondaryColor;
-            margin: 10rem;
+            margin: 10%;
             border-radius: 10px;
 
             //desktop
             @media (min-width:1040px) {
                 max-width: 900px;
-                margin: 10rem auto;
+                margin: 5rem auto;
             }
 
             //stylen för form elementet som håller in inputsen
