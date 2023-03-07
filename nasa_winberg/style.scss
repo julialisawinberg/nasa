@@ -35,7 +35,6 @@ h2 {
 
     //gjorde så för att den första delen ska ta upp hela skärmen
     .top_container {
-        height: 100vh;
 
         //blir det osm håller i hela headern, nödvändigt för att färgen ska fylla skärmen när det andra i headern får en max bredd
         .main_header {
@@ -76,39 +75,41 @@ h2 {
                                 //placerar och för effekt, lite lite style
                                 &:after,
                                 &:before {
-                                    display: inline-block;
+                                    //display: inline-block;
+                                    //för spinnen
                                     transition: all .4s ease;
-                                    //width: 50%;
                                     text-align: center;
-                                    position: absolute;
-                                    //line-height: 2em;
                                     font-weight: bold;
                                     color: #fff;
+                                    //behöver två för båda hållen
                                     position: absolute;
                                     top: 1rem;
                                     right: 1rem;
+                                    //håller text på sin sida
                                     backface-visibility: hidden;
                                     border-radius: 4px;
                                 }
 
                                 //för effekt mest
                                 &:after {
+                                    //återskapar värdet
                                     content: attr(data-tg-on);
-                                    //background: #02C66F;
+                                    //rotatonen
                                     transform: rotateY(-180deg);
                                     padding: .3rem;
                                 }
 
                                 //lightmode
                                 &:before {
-
                                     background: #9d4edd;
+                                    //åteskapar värdet
                                     content: attr(data-tg-off);
                                     padding: .3rem;
                                 }
 
                                 //för efekten
                                 &:active:before {
+                                    //rotationen
                                     transform: rotateY(-20deg);
                                 }
                             }
@@ -116,20 +117,22 @@ h2 {
                             //för efekten
                             &:checked+.tgl-btn {
                                 &:before {
+                                    //rotation
                                     transform: rotateY(180deg);
                                 }
 
                                 //darkmode
                                 &:after {
+                                    //rotation
                                     transform: rotateY(0);
                                     right: 1rem;
                                     background: #3c096c;
-
                                     color: $darkFontColor;
                                 }
 
                                 //före efekten
                                 &:active:after {
+                                    //rotation
                                     transform: rotateY(20deg);
                                 }
                             }
@@ -247,7 +250,7 @@ h2 {
                 //surflpatta
                 @media (min-width:700px) {
                     flex: 0 0 40%;
-                    
+
 
                 }
 
@@ -256,7 +259,7 @@ h2 {
                     flex: 0 0 20%;
                 }
 
-                .img_container{
+                .img_container {
                     width: 100%;
                     height: 250px;
                     padding: 0 1rem;

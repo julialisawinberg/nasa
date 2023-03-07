@@ -29,9 +29,6 @@ h2 {
 .container {
   margin: auto;
 }
-.container .top_container {
-  height: 100vh;
-}
 .container .top_container .main_header {
   background-color: #e7c6ff;
 }
@@ -59,10 +56,8 @@ h2 {
   perspective: 100px;
 }
 .container .top_container .main_header .header_box ul .tg-list-item .tgl-flip + .tgl-btn:after, .container .top_container .main_header .header_box ul .tg-list-item .tgl-flip + .tgl-btn:before {
-  display: inline-block;
   transition: all 0.4s ease;
   text-align: center;
-  position: absolute;
   font-weight: bold;
   color: #fff;
   position: absolute;

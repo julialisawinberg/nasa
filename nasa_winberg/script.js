@@ -41,11 +41,6 @@ btn_send.addEventListener('click', function (event) {
 
     //lyssnar på namn boxen
     let spacenameContainerRef = document.querySelector('.name_box_ultra');
-    // spacenameContainerRef.forEach(element => {
-        
-    // });(element => {
-    //     element.remove();
-    // });
     //sätter in i html vad som skrivs i h2an
     spacenameContainerRef.innerHTML = `<h2>Welcome ${aliasInput.value}! Lets go to space B)</h2> `;
 
